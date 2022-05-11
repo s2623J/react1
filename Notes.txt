@@ -27,4 +27,10 @@
 
     Lifecycle Methods:
         componentDidMount - Called when component first mounts to the screen
-        
+
+    emotion-js:
+        CSS framework
+        Install with: "npm install --save @emotion/react"
+        Install with: "npm install @emotion/react"
+        dynamically create CSS with JS strings
+
