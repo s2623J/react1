@@ -20,3 +20,11 @@
 
     Properties:
         Can be passed into stateless components in lieu of state 
+
+    App:
+        Create app with "npx create-react-app my-app"
+        Execute "npm start" from "my-app" directory
+
+    Lifecycle Methods:
+        componentDidMount - Called when component first mounts to the screen
+        
