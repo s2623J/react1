@@ -1,0 +1,22 @@
+
+    Notes:
+    ------
+    Create elements/element nodes using: React.createElement(type, props, children)
+    Render the actual DOM/DOM node using: ReactDOM.render(<HelloWorld/>, document.getElementById('app))
+    Uses "JSX" formatting so that Babel can compile it
+    Don't know how to structure the JSX? Then model it at: 
+        https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.21&spec=false&loose=false&code_lz=DwCwjAfAUAkAEgUwDZIPYEIoAIswM4AuAnkggLwDeFWAxqmgE4BcWA5KgwIYB2A5gqwC-gqMAD04CEA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Cstage-2&prettier=false&targets=&version=7.17.11&externalPlugins=&assumptions=%7B%7D
+    Details of markup elements are held in key-value collections
+    Markup elements also have "key" properties that reference these collection keys
+
+    Components:
+        Reusable elements/blocks of UI code 
+        Stateless components use functions 
+        Stateful components use hooks that relate to parts of the rendering process
+        Component states can be updated with the "setState()" method
+        State flows from parents to children
+        State only works with classes
+        See image dir for further descriptions
+
+    Properties:
+        Can be passed into stateless components in lieu of state 
