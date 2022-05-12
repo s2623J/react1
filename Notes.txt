@@ -32,5 +32,5 @@
         CSS framework
         Install with: "npm install --save @emotion/react"
         Install with: "npm install @emotion/react"
-        dynamically create CSS with JS strings
+        Uses "styled" object to both create and style markup elements while facilitating property inputs
 

@@ -1,33 +1,11 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import './App.css';
-
-const Header = styled.h1({
-    padding: 16,
-    color: 'hotpink'
-})
-
-const Photo = styled.img({
-    display: 'block',
-    width: '100%',
-    objectFit: 'cover'
-})
-
-const TileView = styled.div( props => ({ // Allows for SASS-like variable passing
-    display: 'grid',
-    padding: props.spacing,
-    gridGap:    props.spacing,
-    gridTemplateColumns: `repeat(auto-fill, minmax(${props.minCellWidth}px, 1fr))`
-}))
-
-TileView.defaultProps = {
-    spacing: 16,
-    minCellWidth: 240
-}
+import { Header, Photo, TileView, Frame } from './componentStyles.js';
+// import './App.css';
 
 class App extends React.Component {
     state = {
-        images: []
+        images:         [],
+        currentPhotoId: null
     }
     componentDidMount() {
         fetch('https://picsum.photos/list')
@@ -44,44 +22,25 @@ class App extends React.Component {
         console.log('State: ', this.state);
         return (
             <div>
-                <Header>
-                    <h1>Picsum</h1>
-                </Header>
+                <Header>Picsum</Header>
                 <TileView>
                     {
-                        this.state.images.map(image => 
-                            <Photo 
+                        this.state.images.map(image => {
+                            const isActive = this.state.currentPhotoId === image.id;
+                            return <Photo 
                                 key={image.id} 
                                 src={`https://picsum.photos/1000/300?image=${image.id}`} 
-                                alt="">
+                                alt=""
+                                onClick={() => this.setState({ currentPhotoId: isActive ? null : image.id })}
+                                isActive = {isActive}>
                             </Photo>
-                        )
+                        })
                     }
                 </TileView>
+                { this.state.currentPhotoId !== null && <Frame /> }
             </div>
         )
     }
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;
